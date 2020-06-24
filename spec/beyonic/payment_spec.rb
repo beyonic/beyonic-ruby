@@ -24,14 +24,14 @@ describe Beyonic::Payment do
       Beyonic::Payment.create(payload)
     end
   end
-  
+
   describe '.crate' do
     context 'Success response' do
       subject do
         create_payment
       end
 
-      it { 
+      it {
         is_expected.to have_requested(:post, 'https://staging.beyonic.com/api/payments').with(
             headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
           )
@@ -49,13 +49,13 @@ describe Beyonic::Payment do
           end
         }
       end
-      it { 
+      it {
         is_expected.to raise_error(Beyonic::AbstractApi::ApiError)
       }
     end
 
     context 'Unauthorized' do
-      before do 
+      before do
         Beyonic.api_key = 'invalid_key'
       end
 
@@ -66,7 +66,7 @@ describe Beyonic::Payment do
           end
         }
       end
-      it { 
+      it {
         is_expected.to raise_error
       }
     end
@@ -81,7 +81,7 @@ describe Beyonic::Payment do
         end
       end
 
-      it { 
+      it {
         is_expected.to have_requested(:get, 'https://staging.beyonic.com/api/payments').with(
             headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
           )
@@ -104,7 +104,7 @@ describe Beyonic::Payment do
         }
       end
 
-      it { 
+      it {
         is_expected.to raise_error
       }
     end
@@ -118,7 +118,7 @@ describe Beyonic::Payment do
         end
       end
 
-      it { 
+      it {
         is_expected.to have_requested(:get, "https://staging.beyonic.com/api/payments/#{create_payment.id}").with(
             headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
           )
@@ -129,7 +129,7 @@ describe Beyonic::Payment do
     end
 
     context 'Unauthorized' do
-      before do 
+      before do
         Beyonic.api_key = 'invalid_key'
       end
 
@@ -141,7 +141,7 @@ describe Beyonic::Payment do
         }
       end
 
-      it { 
+      it {
         is_expected.to raise_error
       }
     end
@@ -154,7 +154,7 @@ describe Beyonic::Payment do
           end
         }
       end
-      it { 
+      it {
         is_expected.to raise_error
       }
     end
@@ -167,16 +167,16 @@ describe Beyonic::Payment do
       before do
         allow(subject).to receive(:create)
         subject.new(payload).save
-      end     
+      end
 
-      it { 
+      it {
         is_expected.to have_received(:create).with(payload)
       }
     end
 
     context 'loaded object' do
       subject { Beyonic::Payment }
-      before do 
+      before do
 
         allow(subject).to receive(:update)
 
@@ -184,7 +184,7 @@ describe Beyonic::Payment do
         create_payment.save
       end
 
-      it { 
+      it {
         is_expected.to have_received(:update).with(create_payment.id, hash_including(description: 'foo'))
       }
     end

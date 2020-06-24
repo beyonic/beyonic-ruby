@@ -1,5 +1,13 @@
 inherit_from: .rubocop_todo.yml
 
+Layout/TrailingEmptyLines:
+  EnforcedStyle: final_newline
+  Enabled: true
+
+Layout/TrailingWhitespace:
+  AllowInHeredoc: false
+  Enabled: true
+
 Style/BlockDelimiters:
   Enabled: true
 

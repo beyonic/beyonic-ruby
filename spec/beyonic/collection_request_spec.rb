@@ -18,14 +18,14 @@ describe Beyonic::CollectionRequest do
       Beyonic::CollectionRequest.create(payload)
     end
   end
-  
+
   describe '.crate' do
     context 'Success response' do
       subject do
         create_collection_requests
       end
 
-      it { 
+      it {
         is_expected.to have_requested(:post, 'https://staging.beyonic.com/api/collectionrequests').with(
             headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
           )
@@ -43,13 +43,13 @@ describe Beyonic::CollectionRequest do
           end
         }
       end
-      it { 
+      it {
         is_expected.to raise_error(Beyonic::AbstractApi::ApiError)
       }
     end
 
     context 'Unauthorized' do
-      before do 
+      before do
         Beyonic.api_key = 'invalid_key'
       end
 
@@ -60,7 +60,7 @@ describe Beyonic::CollectionRequest do
           end
         }
       end
-      it { 
+      it {
         is_expected.to raise_error
       }
     end
@@ -75,7 +75,7 @@ describe Beyonic::CollectionRequest do
         end
       end
 
-      it { 
+      it {
         is_expected.to have_requested(:get, 'https://staging.beyonic.com/api/collectionrequests').with(
             headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
           )
@@ -98,7 +98,7 @@ describe Beyonic::CollectionRequest do
         }
       end
 
-      it { 
+      it {
         is_expected.to raise_error
       }
     end
@@ -112,7 +112,7 @@ describe Beyonic::CollectionRequest do
         end
       end
 
-      it { 
+      it {
         is_expected.to have_requested(:get, "https://staging.beyonic.com/api/collectionrequests/#{create_collection_requests.id}").with(
             headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
           )
@@ -123,7 +123,7 @@ describe Beyonic::CollectionRequest do
     end
 
     context 'Unauthorized' do
-      before do 
+      before do
         Beyonic.api_key = 'invalid_key'
       end
 
@@ -135,7 +135,7 @@ describe Beyonic::CollectionRequest do
         }
       end
 
-      it { 
+      it {
         is_expected.to raise_error
       }
     end
@@ -148,7 +148,7 @@ describe Beyonic::CollectionRequest do
           end
         }
       end
-      it { 
+      it {
         is_expected.to raise_error
       }
     end

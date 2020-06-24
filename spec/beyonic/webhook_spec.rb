@@ -12,21 +12,21 @@ describe Beyonic::Webhook do
       event: 'payment.status.changed',
       target: 'https://my.callback.url/'
     }
-  end 
+  end
 
   let!(:create_webhook) do
     VCR.use_cassette('webhooks_create') do
       Beyonic::Webhook.create(payload)
     end
   end
-  
+
   describe '.crate' do
     context 'Success response' do
       subject do
         create_webhook
       end
 
-      it { 
+      it {
         is_expected.to have_requested(:post, 'https://staging.beyonic.com/api/webhooks').with(
             headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
           )
@@ -44,7 +44,7 @@ describe Beyonic::Webhook do
           end
         }
       end
-      it { 
+      it {
         is_expected.to raise_error(Beyonic::AbstractApi::ApiError)
       }
     end
@@ -60,7 +60,7 @@ describe Beyonic::Webhook do
           end
         }
       end
-      it { 
+      it {
         is_expected.to raise_error
       }
     end
@@ -75,7 +75,7 @@ describe Beyonic::Webhook do
         end
       end
 
-      it { 
+      it {
         is_expected.to have_requested(:get, 'https://staging.beyonic.com/api/webhooks').with(
             headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
           )
@@ -98,7 +98,7 @@ describe Beyonic::Webhook do
         end
         }
       end
-      it { 
+      it {
         is_expected.to raise_error
       }
     end
@@ -112,7 +112,7 @@ describe Beyonic::Webhook do
         end
       end
 
-      it { 
+      it {
         is_expected.to have_requested(:get, "https://staging.beyonic.com/api/webhooks/#{create_webhook.id}").with(
             headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
           )
@@ -134,7 +134,7 @@ describe Beyonic::Webhook do
           end
         }
       end
-      it { 
+      it {
         is_expected.to raise_error
       }
     end
@@ -147,7 +147,7 @@ describe Beyonic::Webhook do
           end
         }
       end
-      it { 
+      it {
         is_expected.to raise_error
       }
     end
@@ -161,7 +161,7 @@ describe Beyonic::Webhook do
         end
       end
 
-      it { 
+      it {
         is_expected.to have_requested(:patch, "https://staging.beyonic.com/api/webhooks/#{create_webhook.id}").with(
             headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
           )
@@ -179,7 +179,7 @@ describe Beyonic::Webhook do
           end
         }
       end
-      it { 
+      it {
         is_expected.to raise_error(Beyonic::AbstractApi::ApiError)
       }
     end
@@ -193,7 +193,7 @@ describe Beyonic::Webhook do
         }
       end
 
-      it { 
+      it {
         is_expected.to raise_error
       }
     end
@@ -211,7 +211,7 @@ describe Beyonic::Webhook do
           end
         }
       end
-      it { 
+      it {
         is_expected.to raise_error
       }
     end
@@ -224,15 +224,15 @@ describe Beyonic::Webhook do
       before do
         allow(subject).to receive(:create)
         subject.new(payload).save
-      end     
+      end
 
-      it { 
+      it {
         is_expected.to have_received(:create).with(payload)
       }
     end
 
     context 'loaded object' do
-      subject do 
+      subject do
         Beyonic::Webhook
       end
 
@@ -242,14 +242,14 @@ describe Beyonic::Webhook do
         create_webhook.save
       end
 
-      it { 
+      it {
         is_expected.to have_received(:update).with(create_webhook.id, hash_including(target: 'https://google.com/'))
       }
     end
   end
 
   describe '#id=' do
-    it { 
+    it {
       expect do
         create_webhook.id=(4)
       end.to raise_error "Can't change id of existing Beyonic::Webhook"
@@ -276,7 +276,7 @@ describe Beyonic::Webhook do
         end
       end
 
-      it { 
+      it {
         is_expected.to have_requested(:delete, "https://staging.beyonic.com/api/webhooks/#{create_webhook.id}").with(
             headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
           )
@@ -293,7 +293,7 @@ describe Beyonic::Webhook do
           end
         }
       end
-      it { 
+      it {
         is_expected.to raise_error
       }
     end
@@ -310,7 +310,7 @@ describe Beyonic::Webhook do
           end
         }
       end
-      it { 
+      it {
         is_expected.to raise_error
       }
     end

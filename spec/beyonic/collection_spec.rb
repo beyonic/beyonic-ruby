@@ -6,7 +6,6 @@ describe Beyonic::Collection do
     Beyonic.api_version = 'v1'
     Beyonic::Collection.instance_variable_set(:@endpoint_url, 'https://staging.beyonic.com/api/collections')
   end
-  
 
   describe '.list' do
     context 'Success response' do
@@ -16,7 +15,7 @@ describe Beyonic::Collection do
         end
       end
 
-      it { 
+      it {
         is_expected.to have_requested(:get, 'https://staging.beyonic.com/api/collections').with(
             headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
           )
@@ -34,7 +33,7 @@ describe Beyonic::Collection do
         end
       end
 
-      it { 
+      it {
         is_expected.to have_requested(:get, 'https://staging.beyonic.com/api/collections?phonenumber=%2B254727843600').with(
             headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
           )
@@ -59,7 +58,7 @@ describe Beyonic::Collection do
         }
       end
 
-      it { 
+      it {
         is_expected.to raise_error
       }
     end
@@ -73,7 +72,7 @@ describe Beyonic::Collection do
         end
       end
 
-      it { 
+      it {
         is_expected.to have_requested(:get, 'https://staging.beyonic.com/api/collections/1').with(
             headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
           )
@@ -84,7 +83,7 @@ describe Beyonic::Collection do
     end
 
     context 'Unauthorized' do
-      before do 
+      before do
         Beyonic.api_key = 'invalid_key'
       end
 
@@ -96,7 +95,7 @@ describe Beyonic::Collection do
         }
       end
 
-      it { 
+      it {
         is_expected.to raise_error
       }
     end
@@ -109,14 +108,13 @@ describe Beyonic::Collection do
           end
         }
       end
-      it { 
+      it {
         is_expected.to raise_error
       }
     end
   end
 
   describe '.claim' do
-    
     context 'by Phonenumber' do
       subject do
         VCR.use_cassette('collections_claim') do
@@ -124,7 +122,7 @@ describe Beyonic::Collection do
         end
       end
 
-      it { 
+      it {
         is_expected.to have_requested(:get, 'https://staging.beyonic.com/api/collections?amount=200&claim=true&phonenumber=%2B254727843600&remote_transaction_id').with(
             headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
           )
@@ -149,7 +147,7 @@ describe Beyonic::Collection do
         }
       end
 
-      it { 
+      it {
         is_expected.to raise_error
       }
     end

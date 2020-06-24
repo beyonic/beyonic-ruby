@@ -143,31 +143,6 @@ Layout/SpaceInsideHashLiteralBraces:
     - 'spec/beyonic/payment_spec.rb'
     - 'spec/beyonic/webhook_spec.rb'
 
-# Offense count: 7
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: final_newline, final_blank_line
-Layout/TrailingEmptyLines:
-  Exclude:
-    - 'Gemfile'
-    - 'Rakefile'
-    - 'lib/beyonic/collection_request.rb'
-    - 'lib/beyonic/contact.rb'
-    - 'lib/beyonic/payment.rb'
-    - 'lib/beyonic/webhook.rb'
-    - 'spec/beyonic/webhook_spec.rb'
-
-# Offense count: 60
-# Cop supports --auto-correct.
-# Configuration parameters: AllowInHeredoc.
-Layout/TrailingWhitespace:
-  Exclude:
-    - 'spec/beyonic/collection_request_spec.rb'
-    - 'spec/beyonic/collection_spec.rb'
-    - 'spec/beyonic/payment_spec.rb'
-    - 'spec/beyonic/webhook_spec.rb'
-    - 'spec/spec_helper.rb'
-
 # Offense count: 2
 # Cop supports --auto-correct.
 # Configuration parameters: IgnoreEmptyBlocks, AllowUnusedKeywordArguments.
