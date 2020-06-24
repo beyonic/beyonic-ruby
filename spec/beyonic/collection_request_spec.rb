@@ -1,8 +1,8 @@
 describe Beyonic::CollectionRequest do
   before {
-    Beyonic.api_key = "d349087313cc7a6627d77ab61163d4dab6449b4c"
-    Beyonic.api_version = "v1"
-    Beyonic::CollectionRequest.instance_variable_set(:@endpoint_url, "https://staging.beyonic.com/api/collectionrequests")
+    Beyonic.api_key = 'd349087313cc7a6627d77ab61163d4dab6449b4c'
+    Beyonic.api_version = 'v1'
+    Beyonic::CollectionRequest.instance_variable_set(:@endpoint_url, 'https://staging.beyonic.com/api/collectionrequests')
   }
 
   let(:payload) {
@@ -19,20 +19,20 @@ describe Beyonic::CollectionRequest do
     end
   }
   
-  describe ".crate" do
+  describe '.crate' do
     context 'Success response' do
       subject {
         create_collection_requests
       }
 
       it { 
-        is_expected.to have_requested(:post, "https://staging.beyonic.com/api/collectionrequests").with(
-            headers: {"Authorization" => "Token d349087313cc7a6627d77ab61163d4dab6449b4c", "Beyonic-Version" => "v1"}
+        is_expected.to have_requested(:post, 'https://staging.beyonic.com/api/collectionrequests').with(
+            headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
           )
       }
       it { is_expected.to be_an(Beyonic::CollectionRequest) }
 
-      it { is_expected.to have_attributes(id: create_collection_requests.id, currency: "UGX") }
+      it { is_expected.to have_attributes(id: create_collection_requests.id, currency: 'UGX') }
     end
 
     context 'Bad request' do
@@ -50,7 +50,7 @@ describe Beyonic::CollectionRequest do
 
     context 'Unauthorized' do
       before { 
-        Beyonic.api_key = "invalid_key"
+        Beyonic.api_key = 'invalid_key'
       }
 
       subject {
@@ -67,7 +67,7 @@ describe Beyonic::CollectionRequest do
 
   end
 
-  describe ".list" do
+  describe '.list' do
     context 'Success response' do
       subject {
         VCR.use_cassette('collection_requests_list') do
@@ -76,8 +76,8 @@ describe Beyonic::CollectionRequest do
       }
 
       it { 
-        is_expected.to have_requested(:get, "https://staging.beyonic.com/api/collectionrequests").with(
-            headers: {"Authorization" => "Token d349087313cc7a6627d77ab61163d4dab6449b4c", "Beyonic-Version" => "v1"}
+        is_expected.to have_requested(:get, 'https://staging.beyonic.com/api/collectionrequests').with(
+            headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
           )
       }
       it { is_expected.to be_an(Array) }
@@ -87,7 +87,7 @@ describe Beyonic::CollectionRequest do
 
     context 'Unauthorized' do
       before {
-        Beyonic.api_key = "invalid_key"
+        Beyonic.api_key = 'invalid_key'
       }
 
       subject {
@@ -104,7 +104,7 @@ describe Beyonic::CollectionRequest do
     end
   end
 
-  describe ".get" do
+  describe '.get' do
     context 'Success response' do
       subject {
         VCR.use_cassette('collection_requests_get') do
@@ -114,17 +114,17 @@ describe Beyonic::CollectionRequest do
 
       it { 
         is_expected.to have_requested(:get, "https://staging.beyonic.com/api/collectionrequests/#{create_collection_requests.id}").with(
-            headers: {"Authorization" => "Token d349087313cc7a6627d77ab61163d4dab6449b4c", "Beyonic-Version" => "v1"}
+            headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
           )
       }
       it { is_expected.to be_an(Beyonic::CollectionRequest) }
 
-      it { is_expected.to have_attributes(id: create_collection_requests.id, currency: "UGX") }
+      it { is_expected.to have_attributes(id: create_collection_requests.id, currency: 'UGX') }
     end
 
     context 'Unauthorized' do
       before { 
-        Beyonic.api_key = "invalid_key"
+        Beyonic.api_key = 'invalid_key'
       }
 
       subject {

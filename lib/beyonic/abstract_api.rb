@@ -24,7 +24,7 @@ module Beyonic::AbstractApi
 
     def list(payload = {})
       # Turn payload into query parameters
-      require "addressable/uri"
+      require 'addressable/uri'
       uri = Addressable::URI.new
       uri.query_values = payload
 
@@ -48,17 +48,17 @@ module Beyonic::AbstractApi
 
     def delete(id)
       resp = RestClient.delete("#{@endpoint_url}/#{id}", headers)
-      return true if resp == ""
+      return true if resp == ''
     end
 
     private
 
     def headers(header_overrides = {})
       headers_hash = {}
-      headers_hash.merge!({"Authorization" => "Token #{Beyonic.api_key}"}) if Beyonic.api_key
-      headers_hash.merge!({"Beyonic-Version" => Beyonic.api_version}) if Beyonic.api_version
-      headers_hash.merge!({"Beyonic-Client" => "Ruby"})
-      headers_hash.merge!({"Beyonic-Client-Version" => Beyonic::VERSION})
+      headers_hash.merge!({'Authorization' => "Token #{Beyonic.api_key}"}) if Beyonic.api_key
+      headers_hash.merge!({'Beyonic-Version' => Beyonic.api_version}) if Beyonic.api_version
+      headers_hash.merge!({'Beyonic-Client' => 'Ruby'})
+      headers_hash.merge!({'Beyonic-Client-Version' => Beyonic::VERSION})
       headers_hash.merge!(header_overrides)
       headers_hash
     end

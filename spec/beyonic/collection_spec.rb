@@ -2,13 +2,13 @@ require 'spec_helper'
 
 describe Beyonic::Collection do
   before {
-    Beyonic.api_key = "d349087313cc7a6627d77ab61163d4dab6449b4c"
-    Beyonic.api_version = "v1"
-    Beyonic::Collection.instance_variable_set(:@endpoint_url, "https://staging.beyonic.com/api/collections")
+    Beyonic.api_key = 'd349087313cc7a6627d77ab61163d4dab6449b4c'
+    Beyonic.api_version = 'v1'
+    Beyonic::Collection.instance_variable_set(:@endpoint_url, 'https://staging.beyonic.com/api/collections')
   }
   
 
-  describe ".list" do
+  describe '.list' do
     context 'Success response' do
       subject {
         VCR.use_cassette('collections_list') do
@@ -17,8 +17,8 @@ describe Beyonic::Collection do
       }
 
       it { 
-        is_expected.to have_requested(:get, "https://staging.beyonic.com/api/collections").with(
-            headers: {"Authorization" => "Token d349087313cc7a6627d77ab61163d4dab6449b4c", "Beyonic-Version" => "v1"}
+        is_expected.to have_requested(:get, 'https://staging.beyonic.com/api/collections').with(
+            headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
           )
       }
       it { is_expected.to be_an(Array) }
@@ -35,8 +35,8 @@ describe Beyonic::Collection do
       }
 
       it { 
-        is_expected.to have_requested(:get, "https://staging.beyonic.com/api/collections?phonenumber=%2B254727843600").with(
-            headers: {"Authorization" => "Token d349087313cc7a6627d77ab61163d4dab6449b4c", "Beyonic-Version" => "v1"}
+        is_expected.to have_requested(:get, 'https://staging.beyonic.com/api/collections?phonenumber=%2B254727843600').with(
+            headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
           )
       }
       it { is_expected.to be_an(Array) }
@@ -48,7 +48,7 @@ describe Beyonic::Collection do
 
     context 'Unauthorized' do
       before {
-        Beyonic.api_key = "invalid_key"
+        Beyonic.api_key = 'invalid_key'
       }
 
       subject {
@@ -65,7 +65,7 @@ describe Beyonic::Collection do
     end
   end
 
-  describe ".get" do
+  describe '.get' do
     context 'Success response' do
       subject {
         VCR.use_cassette('collections_get') do
@@ -74,8 +74,8 @@ describe Beyonic::Collection do
       }
 
       it { 
-        is_expected.to have_requested(:get, "https://staging.beyonic.com/api/collections/1").with(
-            headers: {"Authorization" => "Token d349087313cc7a6627d77ab61163d4dab6449b4c", "Beyonic-Version" => "v1"}
+        is_expected.to have_requested(:get, 'https://staging.beyonic.com/api/collections/1').with(
+            headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
           )
       }
       it { is_expected.to be_an(Beyonic::Collection) }
@@ -85,7 +85,7 @@ describe Beyonic::Collection do
 
     context 'Unauthorized' do
       before { 
-        Beyonic.api_key = "invalid_key"
+        Beyonic.api_key = 'invalid_key'
       }
 
       subject {
@@ -115,7 +115,7 @@ describe Beyonic::Collection do
     end
   end
 
-  describe ".claim" do
+  describe '.claim' do
     
     context 'by Phonenumber' do
       subject {
@@ -125,8 +125,8 @@ describe Beyonic::Collection do
       }
 
       it { 
-        is_expected.to have_requested(:get, "https://staging.beyonic.com/api/collections?amount=200&claim=true&phonenumber=%2B254727843600&remote_transaction_id").with(
-            headers: {"Authorization" => "Token d349087313cc7a6627d77ab61163d4dab6449b4c", "Beyonic-Version" => "v1"}
+        is_expected.to have_requested(:get, 'https://staging.beyonic.com/api/collections?amount=200&claim=true&phonenumber=%2B254727843600&remote_transaction_id').with(
+            headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
           )
       }
       it { is_expected.to be_an(Array) }
@@ -138,7 +138,7 @@ describe Beyonic::Collection do
 
     context 'Unauthorized' do
       before {
-        Beyonic.api_key = "invalid_key"
+        Beyonic.api_key = 'invalid_key'
       }
 
       subject {

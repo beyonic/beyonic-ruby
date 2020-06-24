@@ -1,7 +1,7 @@
 module Beyonic
 
-  require "rest-client"
-  require "oj"
+  require 'rest-client'
+  require 'oj'
 
   # Uncomment this if you are testing on your server and you want to bypass SSL checks.
   # OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
@@ -23,19 +23,19 @@ module Beyonic
   end
 
   def self.endpoint_base
-    "https://app.beyonic.us/api/"
+    'https://app.beyonic.us/api/'
   end
 
 end
 
-require "beyonic/version"
-require "beyonic/abstract_api"
-require "beyonic/payment"
-require "beyonic/webhook"
-require "beyonic/collection"
-require "beyonic/collection_request"
-require "beyonic/account"
-require "beyonic/contact"
-require "beyonic/transaction"
-require "beyonic/currency"
-require "beyonic/network"
+require 'beyonic/version'
+require 'beyonic/abstract_api'
+require 'beyonic/payment'
+require 'beyonic/webhook'
+require 'beyonic/collection'
+require 'beyonic/collection_request'
+require 'beyonic/account'
+require 'beyonic/contact'
+require 'beyonic/transaction'
+require 'beyonic/currency'
+require 'beyonic/network'
