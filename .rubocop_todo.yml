@@ -55,19 +55,6 @@ Layout/EmptyLinesAroundModuleBody:
     - 'lib/beyonic.rb'
     - 'lib/beyonic/abstract_api.rb'
 
-# Offense count: 18
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, IndentationWidth.
-# SupportedStyles: consistent, consistent_relative_to_receiver, special_for_inner_method_call, special_for_inner_method_call_in_parentheses
-Layout/FirstArgumentIndentation:
-  Exclude:
-    - 'spec/beyonic/accounts_spec.rb'
-    - 'spec/beyonic/collection_request_spec.rb'
-    - 'spec/beyonic/collection_spec.rb'
-    - 'spec/beyonic/metadata_spec.rb'
-    - 'spec/beyonic/payment_spec.rb'
-    - 'spec/beyonic/webhook_spec.rb'
-
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: Width, IgnoredPatterns.

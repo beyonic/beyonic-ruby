@@ -27,8 +27,8 @@ describe Beyonic::CollectionRequest do
 
       it {
         is_expected.to have_requested(:post, 'https://staging.beyonic.com/api/collectionrequests').with(
-            headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
-          )
+          headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
+        )
       }
       it { is_expected.to be_an(Beyonic::CollectionRequest) }
 
@@ -77,8 +77,8 @@ describe Beyonic::CollectionRequest do
 
       it {
         is_expected.to have_requested(:get, 'https://staging.beyonic.com/api/collectionrequests').with(
-            headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
-          )
+          headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
+        )
       }
       it { is_expected.to be_an(Array) }
 
@@ -114,8 +114,8 @@ describe Beyonic::CollectionRequest do
 
       it {
         is_expected.to have_requested(:get, "https://staging.beyonic.com/api/collectionrequests/#{create_collection_requests.id}").with(
-            headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
-          )
+          headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
+        )
       }
       it { is_expected.to be_an(Beyonic::CollectionRequest) }
 

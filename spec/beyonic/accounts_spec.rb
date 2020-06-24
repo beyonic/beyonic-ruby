@@ -18,8 +18,8 @@ describe Beyonic::Account do
 
       it {
         is_expected.to have_requested(:get, "#{API_ENDPOINT}").with(
-            headers: {'Authorization' => "Token #{Beyonic.api_key}", 'Beyonic-Version' => Beyonic.api_version}
-          )
+          headers: {'Authorization' => "Token #{Beyonic.api_key}", 'Beyonic-Version' => Beyonic.api_version}
+        )
       }
       it { is_expected.to be_an(Array) }
 

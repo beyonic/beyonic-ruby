@@ -17,8 +17,8 @@ describe Beyonic::Collection do
 
       it {
         is_expected.to have_requested(:get, 'https://staging.beyonic.com/api/collections').with(
-            headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
-          )
+          headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
+        )
       }
       it { is_expected.to be_an(Array) }
       it { is_expected.to have(1).items }
@@ -35,8 +35,8 @@ describe Beyonic::Collection do
 
       it {
         is_expected.to have_requested(:get, 'https://staging.beyonic.com/api/collections?phonenumber=%2B254727843600').with(
-            headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
-          )
+          headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
+        )
       }
       it { is_expected.to be_an(Array) }
 
@@ -74,8 +74,8 @@ describe Beyonic::Collection do
 
       it {
         is_expected.to have_requested(:get, 'https://staging.beyonic.com/api/collections/1').with(
-            headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
-          )
+          headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
+        )
       }
       it { is_expected.to be_an(Beyonic::Collection) }
 
@@ -124,8 +124,8 @@ describe Beyonic::Collection do
 
       it {
         is_expected.to have_requested(:get, 'https://staging.beyonic.com/api/collections?amount=200&claim=true&phonenumber=%2B254727843600&remote_transaction_id').with(
-            headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
-          )
+          headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
+        )
       }
       it { is_expected.to be_an(Array) }
 

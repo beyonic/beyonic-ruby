@@ -33,8 +33,8 @@ describe Beyonic::Payment do
 
       it {
         is_expected.to have_requested(:post, 'https://staging.beyonic.com/api/payments').with(
-            headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
-          )
+          headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
+        )
       }
       it { is_expected.to be_an(Beyonic::Payment) }
 
@@ -83,8 +83,8 @@ describe Beyonic::Payment do
 
       it {
         is_expected.to have_requested(:get, 'https://staging.beyonic.com/api/payments').with(
-            headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
-          )
+          headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
+        )
       }
       it { is_expected.to be_an(Array) }
 
@@ -120,8 +120,8 @@ describe Beyonic::Payment do
 
       it {
         is_expected.to have_requested(:get, "https://staging.beyonic.com/api/payments/#{create_payment.id}").with(
-            headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
-          )
+          headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
+        )
       }
       it { is_expected.to be_an(Beyonic::Payment) }
 

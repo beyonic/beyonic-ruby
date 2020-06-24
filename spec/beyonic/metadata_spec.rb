@@ -38,8 +38,8 @@ describe Beyonic::CollectionRequest do
 
       it {
         is_expected.to have_requested(:post, 'https://staging.beyonic.com/api/collectionrequests').with(
-            headers: {'Authorization' => 'Token c4269a8029e8a7c5659d3cb7829ce1d7319b4689', 'Beyonic-Version' => 'v1'}
-          )
+          headers: {'Authorization' => 'Token c4269a8029e8a7c5659d3cb7829ce1d7319b4689', 'Beyonic-Version' => 'v1'}
+        )
       }
       it { is_expected.to be_an(Beyonic::CollectionRequest) }
       it { is_expected.to have_attributes('metadata': metadata_array_notation_request.metadata, currency: 'BXC') }
@@ -59,8 +59,8 @@ describe Beyonic::CollectionRequest do
 
       it {
         is_expected.to have_requested(:post, 'https://staging.beyonic.com/api/collectionrequests').with(
-            headers: {'Authorization' => 'Token c4269a8029e8a7c5659d3cb7829ce1d7319b4689', 'Beyonic-Version' => 'v1'}
-          )
+          headers: {'Authorization' => 'Token c4269a8029e8a7c5659d3cb7829ce1d7319b4689', 'Beyonic-Version' => 'v1'}
+        )
       }
       it { is_expected.to be_an(Beyonic::CollectionRequest) }
       it { is_expected.to have_attributes('metadata': metadata_dot_notation_request.metadata, currency: 'BXC') }

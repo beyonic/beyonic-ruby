@@ -1,5 +1,12 @@
 inherit_from: .rubocop_todo.yml
 
+Layout/ArgumentAlignment:
+  EnforcedStyle: with_first_argument
+  Enabled: true
+
+Layout/FirstArgumentIndentation:i
+  Enabled: true
+
 Layout/TrailingEmptyLines:
   EnforcedStyle: final_newline
   Enabled: true
