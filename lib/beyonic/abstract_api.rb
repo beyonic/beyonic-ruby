@@ -10,11 +10,11 @@ module Beyonic::AbstractApi
 
     def create(payload = {}, header_overrides = {})
       # transform metadata from hash notation to dot notation
-      if (payload.has_key?:metadata) &&  (!payload[:metadata].empty?)
+      if (payload.has_key? :metadata) && (!payload[:metadata].empty?)
         payload[:metadata].each do |key, value|
           payload["metadata.#{key}"] = value
         end
-        payload.delete:metadata
+        payload.delete :metadata
       end
       resp = RestClient.post(@endpoint_url, payload, headers(header_overrides))
       self.new(Oj.load(resp))
@@ -30,7 +30,7 @@ module Beyonic::AbstractApi
 
       resp = RestClient.get(@endpoint_url + '?' + uri.query, headers)
       ret = self.new(Oj.load(resp))
-      ret.results = ret.results.map { |obj_attrs| self.new(obj_attrs)}
+      ret.results = ret.results.map { |obj_attrs| self.new(obj_attrs) }
       return ret
     end
 
@@ -55,10 +55,10 @@ module Beyonic::AbstractApi
 
     def headers(header_overrides = {})
       headers_hash = {}
-      headers_hash.merge!({'Authorization' => "Token #{Beyonic.api_key}"}) if Beyonic.api_key
-      headers_hash.merge!({'Beyonic-Version' => Beyonic.api_version}) if Beyonic.api_version
-      headers_hash.merge!({'Beyonic-Client' => 'Ruby'})
-      headers_hash.merge!({'Beyonic-Client-Version' => Beyonic::VERSION})
+      headers_hash.merge!({ 'Authorization' => "Token #{Beyonic.api_key}" }) if Beyonic.api_key
+      headers_hash.merge!({ 'Beyonic-Version' => Beyonic.api_version }) if Beyonic.api_version
+      headers_hash.merge!({ 'Beyonic-Client' => 'Ruby' })
+      headers_hash.merge!({ 'Beyonic-Client-Version' => Beyonic::VERSION })
       headers_hash.merge!(header_overrides)
       headers_hash
     end
@@ -78,9 +78,9 @@ module Beyonic::AbstractApi
 
     def []=(name, value)
       if name.to_sym == :id
-        self.id=(value)
+        self.id = (value)
       else
-        super(name,value)
+        super(name, value)
       end
     end
 

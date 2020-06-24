@@ -4,7 +4,35 @@ Layout/ArgumentAlignment:
   EnforcedStyle: with_first_argument
   Enabled: true
 
-Layout/FirstArgumentIndentation:i
+Layout/FirstArgumentIndentation:
+  Enabled: true
+
+Layout/SpaceAfterComma:
+  Enabled: true  
+
+Layout/SpaceAroundOperators:
+  AllowForAlignment: true
+  EnforcedStyleForExponentOperator: no_space
+  Enabled: true
+
+Layout/SpaceBeforeBlockBraces:
+  EnforcedStyle: space
+  EnforcedStyleForEmptyBraces: space
+  Enabled: true
+
+Layout/SpaceBeforeFirstArg:
+  AllowForAlignment: true
+  Enabled: true
+
+Layout/SpaceInsideBlockBraces:
+  EnforcedStyle: space
+  EnforcedStyleForEmptyBraces: no_space
+  SpaceBeforeBlockParameters: true
+  Enabled: true
+
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: compact
+  EnforcedStyleForEmptyBraces: no_space
   Enabled: true
 
 Layout/TrailingEmptyLines:

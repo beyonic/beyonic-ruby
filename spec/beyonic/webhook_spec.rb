@@ -28,7 +28,7 @@ describe Beyonic::Webhook do
 
       it {
         is_expected.to have_requested(:post, 'https://staging.beyonic.com/api/webhooks').with(
-          headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
+          headers: { 'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1' }
         )
       }
       it { is_expected.to be_an(Beyonic::Webhook) }
@@ -77,7 +77,7 @@ describe Beyonic::Webhook do
 
       it {
         is_expected.to have_requested(:get, 'https://staging.beyonic.com/api/webhooks').with(
-          headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
+          headers: { 'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1' }
         )
       }
       it { is_expected.to be_an(Array) }
@@ -114,7 +114,7 @@ describe Beyonic::Webhook do
 
       it {
         is_expected.to have_requested(:get, "https://staging.beyonic.com/api/webhooks/#{create_webhook.id}").with(
-          headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
+          headers: { 'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1' }
         )
       }
       it { is_expected.to be_an(Beyonic::Webhook) }
@@ -163,7 +163,7 @@ describe Beyonic::Webhook do
 
       it {
         is_expected.to have_requested(:patch, "https://staging.beyonic.com/api/webhooks/#{create_webhook.id}").with(
-          headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
+          headers: { 'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1' }
         )
       }
       it { is_expected.to be_an(Beyonic::Webhook) }
@@ -251,19 +251,19 @@ describe Beyonic::Webhook do
   describe '#id=' do
     it {
       expect do
-        create_webhook.id=(4)
+        create_webhook.id = (4)
       end.to raise_error "Can't change id of existing Beyonic::Webhook"
     }
 
     it {
       expect do
-        create_webhook[:id]=(4)
+        create_webhook[:id] = (4)
       end.to raise_error "Can't change id of existing Beyonic::Webhook"
     }
 
     it {
       expect do
-        create_webhook[:target]='foo'
+        create_webhook[:target] = 'foo'
       end.to_not raise_error
     }
   end
@@ -278,7 +278,7 @@ describe Beyonic::Webhook do
 
       it {
         is_expected.to have_requested(:delete, "https://staging.beyonic.com/api/webhooks/#{create_webhook.id}").with(
-          headers: {'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1'}
+          headers: { 'Authorization' => 'Token d349087313cc7a6627d77ab61163d4dab6449b4c', 'Beyonic-Version' => 'v1' }
         )
       }
       it { is_expected.to be_truthy }

@@ -12,7 +12,7 @@ describe Beyonic::CollectionRequest do
       phonenumber: '+40715441309',
       currency: 'BXC',
       amount: 3000,
-      metadata: {"my_id": '123ASDAsd123'}
+      metadata: { "my_id": '123ASDAsd123' }
     }
   end
 
@@ -38,7 +38,7 @@ describe Beyonic::CollectionRequest do
 
       it {
         is_expected.to have_requested(:post, 'https://staging.beyonic.com/api/collectionrequests').with(
-          headers: {'Authorization' => 'Token c4269a8029e8a7c5659d3cb7829ce1d7319b4689', 'Beyonic-Version' => 'v1'}
+          headers: { 'Authorization' => 'Token c4269a8029e8a7c5659d3cb7829ce1d7319b4689', 'Beyonic-Version' => 'v1' }
         )
       }
       it { is_expected.to be_an(Beyonic::CollectionRequest) }
@@ -59,7 +59,7 @@ describe Beyonic::CollectionRequest do
 
       it {
         is_expected.to have_requested(:post, 'https://staging.beyonic.com/api/collectionrequests').with(
-          headers: {'Authorization' => 'Token c4269a8029e8a7c5659d3cb7829ce1d7319b4689', 'Beyonic-Version' => 'v1'}
+          headers: { 'Authorization' => 'Token c4269a8029e8a7c5659d3cb7829ce1d7319b4689', 'Beyonic-Version' => 'v1' }
         )
       }
       it { is_expected.to be_an(Beyonic::CollectionRequest) }
