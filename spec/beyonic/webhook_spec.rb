@@ -64,7 +64,6 @@ describe Beyonic::Webhook do
         is_expected.to raise_error
       }
     end
-
   end
 
   describe '.list' do
@@ -282,7 +281,6 @@ describe Beyonic::Webhook do
         )
       }
       it { is_expected.to be_truthy }
-
     end
 
     context 'Forbidden' do

@@ -70,7 +70,6 @@ describe Beyonic::Payment do
         is_expected.to raise_error
       }
     end
-
   end
 
   describe '.list' do
@@ -177,7 +176,6 @@ describe Beyonic::Payment do
     context 'loaded object' do
       subject { Beyonic::Payment }
       before do
-
         allow(subject).to receive(:update)
 
         create_payment.description = 'foo'

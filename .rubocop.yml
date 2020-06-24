@@ -4,6 +4,24 @@ Layout/ArgumentAlignment:
   EnforcedStyle: with_first_argument
   Enabled: true
 
+Layout/EmptyLineAfterMagicComment:
+  Enabled: true
+
+Layout/EmptyLineBetweenDefs:
+  AllowAdjacentOneLineDefs: false
+  Enabled: true
+
+Layout/EmptyLines:
+  Enabled: true
+
+Layout/EmptyLinesAroundBlockBody:
+  EnforcedStyle: no_empty_lines
+  Enabled: true
+
+Layout/EmptyLinesAroundModuleBody:
+  EnforcedStyle: no_empty_lines
+  Enabled: true
+
 Layout/FirstArgumentIndentation:
   Enabled: true
 

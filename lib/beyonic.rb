@@ -1,5 +1,4 @@
 module Beyonic
-
   require 'rest-client'
   require 'oj'
 
@@ -25,7 +24,6 @@ module Beyonic
   def self.endpoint_base
     'https://app.beyonic.us/api/'
   end
-
 end
 
 require 'beyonic/version'

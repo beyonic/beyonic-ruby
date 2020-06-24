@@ -3,7 +3,6 @@ module Beyonic::AbstractApi
   end
 
   module ClassMethods
-
     def set_endpoint_resource(resource)
       @endpoint_url = Beyonic.endpoint_base + resource
     end
@@ -62,11 +61,9 @@ module Beyonic::AbstractApi
       headers_hash.merge!(header_overrides)
       headers_hash
     end
-
   end
 
   module InstanceMethods
-
     def save
       if respond_to?(:id) && !id.nil?
         self.class.update(id, to_h)
@@ -75,7 +72,6 @@ module Beyonic::AbstractApi
       end
     end
 
-
     def []=(name, value)
       if name.to_sym == :id
         self.id = (value)
@@ -83,7 +79,6 @@ module Beyonic::AbstractApi
         super(name, value)
       end
     end
-
   end
 
   module Initializer
@@ -101,5 +96,4 @@ module Beyonic::AbstractApi
     receiver.send :include, InstanceMethods
     receiver.send :prepend, Initializer
   end
-
 end

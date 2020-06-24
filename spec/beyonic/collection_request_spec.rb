@@ -64,7 +64,6 @@ describe Beyonic::CollectionRequest do
         is_expected.to raise_error
       }
     end
-
   end
 
   describe '.list' do

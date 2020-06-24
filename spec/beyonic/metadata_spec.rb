@@ -66,6 +66,4 @@ describe Beyonic::CollectionRequest do
       it { is_expected.to have_attributes('metadata': metadata_dot_notation_request.metadata, currency: 'BXC') }
     end
   end
-
-
 end
