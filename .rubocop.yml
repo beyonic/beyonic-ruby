@@ -1,5 +1,12 @@
 inherit_from: .rubocop_todo.yml
 
+Style/BlockDelimiters:
+  Enabled: true
+
+Style/Lambda:
+  EnforcedStyle: line_count_dependent
+  Enabled: true
+
 Style/StringLiterals:
   EnforcedStyle: single_quotes
   Enabled: true
