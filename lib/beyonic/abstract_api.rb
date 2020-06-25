@@ -41,8 +41,8 @@ module Beyonic::AbstractApi
     def update(id, payload, header_overrides = {})
       resp = RestClient.patch("#{@endpoint_url}/#{id}", payload, headers(header_overrides))
       new(Oj.load(resp))
-      rescue RestClient::BadRequest => e
-        raise ApiError.new(Oj.load(e.response.body))
+    rescue RestClient::BadRequest => e
+      raise ApiError.new(Oj.load(e.response.body))
     end
 
     def delete(id)
@@ -84,7 +84,7 @@ module Beyonic::AbstractApi
   module Initializer
     def initialize(*args)
       super(*args)
-      #We should define it after Object initialization
+      # We should define it after Object initialization
       define_singleton_method(:id=) do |val|
         raise "Can't change id of existing #{self.class}"
       end

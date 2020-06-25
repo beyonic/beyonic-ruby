@@ -61,6 +61,22 @@ Layout/TrailingWhitespace:
   AllowInHeredoc: false
   Enabled: true
 
+Layout/IndentationWidth:
+  Enabled: true
+
+Layout/LeadingCommentSpace:
+  Enabled: true
+
+Layout/LineLength:
+  Enabled: true
+  Max: 168
+
+Layout/RescueEnsureAlignment:
+  Enabled: true
+
+Naming/AccessorMethodName:
+  Enabled: false
+
 Style/BlockDelimiters:
   Enabled: true
 

@@ -92,9 +92,9 @@ describe Beyonic::Webhook do
 
       subject do
         lambda {
-        VCR.use_cassette('webhooks_invalid_token_list') do
-          Beyonic::Webhook.list
-        end
+          VCR.use_cassette('webhooks_invalid_token_list') do
+            Beyonic::Webhook.list
+          end
         }
       end
       it {
