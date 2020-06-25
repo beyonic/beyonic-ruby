@@ -71,3 +71,45 @@ Style/Lambda:
 Style/StringLiterals:
   EnforcedStyle: single_quotes
   Enabled: true
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/RedundantInterpolation:
+  Enabled: false
+
+Style/RedundantParentheses:
+  Enabled: true
+
+Style/RedundantPercentQ:
+  Enabled: true
+
+Style/RedundantReturn:
+  Enabled: true
+
+Style/RedundantSelf:
+  Enabled: true
+
+Style/MutableConstant:
+  EnforcedStyle: literals
+  Enabled: true
+
+Style/PercentLiteralDelimiters:
+  Enabled: true
+
+Style/PreferredHashMethods:
+  EnforcedStyle: short
+  Enabled: true
+
+Style/RaiseArgs:
+  Enabled: true
+  EnforcedStyle: compact
+
+Style/Encoding:
+  Enabled: true
+
+Style/ExpandPathArguments:
+  Enabled: true

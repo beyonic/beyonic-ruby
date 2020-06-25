@@ -1,6 +1,4 @@
-# coding: utf-8
-
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'beyonic/version'
 
@@ -9,8 +7,8 @@ Gem::Specification.new do |spec|
   spec.version       = Beyonic::VERSION
   spec.authors       = ['Oleg German', 'Luke Kyohere']
   spec.email         = ['oleg.german@gmail.com', 'luke@beyonic.com']
-  spec.summary       = %q{Ruby library for the beyonic.com api}
-  spec.description   = %q{Beyonic.com makes enterprise payments to mobile easy. Details: http://beyonic.com}
+  spec.summary       = 'Ruby library for the beyonic.com api'
+  spec.description   = 'Beyonic.com makes enterprise payments to mobile easy. Details: http://beyonic.com'
   spec.homepage      = 'http://support.beyonic.com/api/'
   spec.license       = 'MIT'
 

@@ -9,14 +9,14 @@ module Beyonic::AbstractApi
 
     def create(payload = {}, header_overrides = {})
       # transform metadata from hash notation to dot notation
-      if (payload.has_key? :metadata) && (!payload[:metadata].empty?)
+      if (payload.key? :metadata) && !payload[:metadata].empty?
         payload[:metadata].each do |key, value|
           payload["metadata.#{key}"] = value
         end
         payload.delete :metadata
       end
       resp = RestClient.post(@endpoint_url, payload, headers(header_overrides))
-      self.new(Oj.load(resp))
+      new(Oj.load(resp))
     rescue RestClient::BadRequest => e
       raise ApiError.new(Oj.load(e.response.body))
     end
@@ -28,19 +28,19 @@ module Beyonic::AbstractApi
       uri.query_values = payload
 
       resp = RestClient.get(@endpoint_url + '?' + uri.query, headers)
-      ret = self.new(Oj.load(resp))
-      ret.results = ret.results.map { |obj_attrs| self.new(obj_attrs) }
-      return ret
+      ret = new(Oj.load(resp))
+      ret.results = ret.results.map { |obj_attrs| new(obj_attrs) }
+      ret
     end
 
     def get(id)
       resp = RestClient.get("#{@endpoint_url}/#{id}", headers)
-      self.new(Oj.load(resp))
+      new(Oj.load(resp))
     end
 
     def update(id, payload, header_overrides = {})
       resp = RestClient.patch("#{@endpoint_url}/#{id}", payload, headers(header_overrides))
-      self.new(Oj.load(resp))
+      new(Oj.load(resp))
       rescue RestClient::BadRequest => e
         raise ApiError.new(Oj.load(e.response.body))
     end
@@ -74,7 +74,7 @@ module Beyonic::AbstractApi
 
     def []=(name, value)
       if name.to_sym == :id
-        self.id = (value)
+        self.id = value
       else
         super(name, value)
       end

@@ -250,13 +250,13 @@ describe Beyonic::Webhook do
   describe '#id=' do
     it {
       expect do
-        create_webhook.id = (4)
+        create_webhook.id = 4
       end.to raise_error "Can't change id of existing Beyonic::Webhook"
     }
 
     it {
       expect do
-        create_webhook[:id] = (4)
+        create_webhook[:id] = 4
       end.to raise_error "Can't change id of existing Beyonic::Webhook"
     }
 
