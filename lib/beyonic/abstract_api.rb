@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Beyonic::AbstractApi
   class ApiError < StandardError
   end

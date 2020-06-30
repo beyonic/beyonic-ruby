@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Beyonic
   require 'rest-client'
   require 'oj'

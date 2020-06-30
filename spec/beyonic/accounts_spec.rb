@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe Beyonic::Account do
   before do
     Beyonic.api_key = 'd349087313cc7a6627d77ab61163d4dab6449b4c'
     Beyonic.api_version = 'v1'
-    API_ENDPOINT = 'https://staging.beyonic.com/api/accounts'.freeze
+    API_ENDPOINT = 'https://staging.beyonic.com/api/accounts'
     Beyonic::Account.instance_variable_set(:@endpoint_url, API_ENDPOINT)
   end
 

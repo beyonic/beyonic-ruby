@@ -91,6 +91,9 @@ Naming/AccessorMethodName:
 Style/BlockDelimiters:
   Enabled: true
 
+Style/FrozenStringLiteralComment:
+  Enabled: true
+
 Style/Lambda:
   EnforcedStyle: line_count_dependent
   Enabled: true

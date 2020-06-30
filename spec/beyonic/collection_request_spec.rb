@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe Beyonic::CollectionRequest do
   before do
     Beyonic.api_key = 'd349087313cc7a6627d77ab61163d4dab6449b4c'
