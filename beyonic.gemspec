@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'beyonic/version'
@@ -5,6 +7,7 @@ require 'beyonic/version'
 Gem::Specification.new do |spec|
   spec.name          = 'beyonic'
   spec.version       = Beyonic::VERSION
+  spec.required_ruby_version = '2.5.8'
   spec.authors       = ['Oleg German', 'Luke Kyohere']
   spec.email         = ['oleg.german@gmail.com', 'luke@beyonic.com']
   spec.summary       = 'Ruby library for the beyonic.com api'
@@ -17,15 +20,15 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency 'rest-client', '~> 2.1.0'
-  spec.add_runtime_dependency 'oj', '~> 2.11'
   spec.add_runtime_dependency 'addressable', '~> 2.7'
+  spec.add_runtime_dependency 'oj', '~> 2.11'
+  spec.add_runtime_dependency 'rest-client', '~> 2.1.0'
 
   spec.add_development_dependency 'bundler', '~> 2.1.4'
   spec.add_development_dependency 'rake', '~> 13.0.1'
   spec.add_development_dependency 'rspec', '~> 3.9'
   spec.add_development_dependency 'rspec-collection_matchers', '~> 1.2.0'
-  spec.add_development_dependency 'webmock', '~> 3.8.3'
   spec.add_development_dependency 'simplecov', '~> 0.18.5'
   spec.add_development_dependency 'vcr', '~> 6.0.0'
+  spec.add_development_dependency 'webmock', '~> 3.8.3'
 end

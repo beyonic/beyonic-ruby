@@ -1,5 +1,17 @@
 inherit_from: .rubocop_todo.yml
 
+AllCops:
+  TargetRubyVersion: 2.5.8
+
+Gemspec/OrderedDependencies:
+  Enabled: true
+
+Gemspec/DuplicatedAssignment:
+  Enabled: true
+
+Gemspec/RubyVersionGlobalsUsage:
+  Enabled: true
+
 Layout/ArgumentAlignment:
   EnforcedStyle: with_first_argument
   Enabled: true
