@@ -1,8 +1,9 @@
-require 'simplecov'
-SimpleCov.start do 
-  add_filter "/spec/"
-end
+# frozen_string_literal: true
 
+require 'simplecov'
+SimpleCov.start do
+  add_filter '/spec/'
+end
 
 require 'rubygems'
 require 'bundler/setup'
@@ -33,7 +34,7 @@ VCR.configure do |c|
   c.cassette_library_dir = 'fixtures/vcr_cassettes'
   c.ignore_hosts '127.0.0.1', 'localhost'
   c.hook_into :webmock
-  c.before_record do |i|
+  c.before_record do |_i|
     OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
   end
 end

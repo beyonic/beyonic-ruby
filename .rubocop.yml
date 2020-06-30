@@ -1,0 +1,157 @@
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  TargetRubyVersion: 2.5.8
+
+Gemspec/OrderedDependencies:
+  Enabled: true
+
+Gemspec/DuplicatedAssignment:
+  Enabled: true
+
+Gemspec/RubyVersionGlobalsUsage:
+  Enabled: true
+
+Layout/ArgumentAlignment:
+  EnforcedStyle: with_first_argument
+  Enabled: true
+
+Layout/EmptyLineAfterMagicComment:
+  Enabled: true
+
+Layout/EmptyLineBetweenDefs:
+  AllowAdjacentOneLineDefs: false
+  Enabled: true
+
+Layout/EmptyLines:
+  Enabled: true
+
+Layout/EmptyLinesAroundBlockBody:
+  EnforcedStyle: no_empty_lines
+  Enabled: true
+
+Layout/EmptyLinesAroundModuleBody:
+  EnforcedStyle: no_empty_lines
+  Enabled: true
+
+Layout/FirstArgumentIndentation:
+  Enabled: true
+
+Layout/SpaceAfterComma:
+  Enabled: true  
+
+Layout/SpaceAroundOperators:
+  AllowForAlignment: true
+  EnforcedStyleForExponentOperator: no_space
+  Enabled: true
+
+Layout/SpaceBeforeBlockBraces:
+  EnforcedStyle: space
+  EnforcedStyleForEmptyBraces: space
+  Enabled: true
+
+Layout/SpaceBeforeFirstArg:
+  AllowForAlignment: true
+  Enabled: true
+
+Layout/SpaceInsideBlockBraces:
+  EnforcedStyle: space
+  EnforcedStyleForEmptyBraces: no_space
+  SpaceBeforeBlockParameters: true
+  Enabled: true
+
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: compact
+  EnforcedStyleForEmptyBraces: no_space
+  Enabled: true
+
+Layout/TrailingEmptyLines:
+  EnforcedStyle: final_newline
+  Enabled: true
+
+Layout/TrailingWhitespace:
+  AllowInHeredoc: false
+  Enabled: true
+
+Layout/IndentationWidth:
+  Enabled: true
+
+Layout/LeadingCommentSpace:
+  Enabled: true
+
+Layout/LineLength:
+  Enabled: true
+  Max: 168
+
+Layout/RescueEnsureAlignment:
+  Enabled: true
+
+Lint/UnusedBlockArgument:
+  Enabled: true
+
+Metrics/AbcSize:
+  Enabled: true
+  Max: 17
+
+Metrics/BlockLength:
+  Enabled: true
+  Max: 272
+
+Naming/AccessorMethodName:
+  Enabled: false
+
+Style/BlockDelimiters:
+  Enabled: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+
+Style/Lambda:
+  EnforcedStyle: line_count_dependent
+  Enabled: true
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+  Enabled: true
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/RedundantInterpolation:
+  Enabled: false
+
+Style/RedundantParentheses:
+  Enabled: true
+
+Style/RedundantPercentQ:
+  Enabled: true
+
+Style/RedundantReturn:
+  Enabled: true
+
+Style/RedundantSelf:
+  Enabled: true
+
+Style/MutableConstant:
+  EnforcedStyle: literals
+  Enabled: true
+
+Style/PercentLiteralDelimiters:
+  Enabled: true
+
+Style/PreferredHashMethods:
+  EnforcedStyle: short
+  Enabled: true
+
+Style/RaiseArgs:
+  Enabled: true
+  EnforcedStyle: compact
+
+Style/Encoding:
+  Enabled: true
+
+Style/ExpandPathArguments:
+  Enabled: true
