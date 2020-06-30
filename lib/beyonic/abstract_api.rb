@@ -85,7 +85,7 @@ module Beyonic::AbstractApi
     def initialize(*args)
       super(*args)
       # We should define it after Object initialization
-      define_singleton_method(:id=) do |val|
+      define_singleton_method(:id=) do |_val|
         raise "Can't change id of existing #{self.class}"
       end
     end

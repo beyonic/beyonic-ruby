@@ -32,7 +32,7 @@ VCR.configure do |c|
   c.cassette_library_dir = 'fixtures/vcr_cassettes'
   c.ignore_hosts '127.0.0.1', 'localhost'
   c.hook_into :webmock
-  c.before_record do |i|
+  c.before_record do |_i|
     OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
   end
 end

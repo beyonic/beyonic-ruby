@@ -74,6 +74,17 @@ Layout/LineLength:
 Layout/RescueEnsureAlignment:
   Enabled: true
 
+Lint/UnusedBlockArgument:
+  Enabled: true
+
+Metrics/AbcSize:
+  Enabled: true
+  Max: 17
+
+Metrics/BlockLength:
+  Enabled: true
+  Max: 272
+
 Naming/AccessorMethodName:
   Enabled: false
 
