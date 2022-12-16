@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Beyonic::VERSION
   spec.authors       = ['Oleg German', 'Luke Kyohere']
   spec.email         = ['oleg.german@gmail.com', 'luke@beyonic.com']
-  spec.summary       = %q{Ruby library for the beyonic.com api}
-  spec.description   = %q{Beyonic.com makes enterprise payments to mobile easy. Details: http://beyonic.com}
-  spec.homepage      = "http://support.beyonic.com/api/"
+  spec.summary       = %q{Ruby library for the mfsafrica.com api}
+  spec.description   = %q{MfsAfrica.com makes enterprise payments to mobile easy. Details: http://mfsafrica.com}
+  spec.homepage      = "http://support.mfsafrica.com/api/"
   spec.license       = "MIT"
 
   spec.files         = Dir["{lib}/**/*.rb", "bin/*", "LICENSE", "*.md"]

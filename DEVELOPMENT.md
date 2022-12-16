@@ -13,7 +13,7 @@ class Beyonic::NewModel < OpenStruct
 
   set_endpoint_resource "newmodel"
   # Endpoint defenition in our case resulting endpoint will be
-  # https://app.beyonic.com/api/newmodel
+  # https://api.mfsafrica.com/api/newmodel
 end
 ```
 Also we need to require our model in "lib/beyonic.rb":
