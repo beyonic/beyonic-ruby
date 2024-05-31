@@ -1,6 +1,6 @@
 # Beyonic Ruby Library
 
-Ruby gem for the http://beyonic.com API
+Ruby gem for the http://onafriq.com API
 
 ## Installation
 
