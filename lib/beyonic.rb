@@ -23,7 +23,7 @@ module Beyonic
   end
 
   def self.endpoint_base
-    "https://app.beyonic.us/api/"
+    "https://api.onafriq.com/api/"
   end
 
 end
